@@ -14,13 +14,19 @@ import unittest
 from cv2 import exp
 
 def total_monthly_expense(whatsapp_msgs):
-    """ 
+   
+    """
     Return the total expenditure of the month from the whatsapp_msgs
     """
     total_expense = 0
     # Write your implementation here
+    y=re.findall(r'\b[0-9]\w+',whatsapp_msgs)
+    for i in y:
+        total_expense=total_expense+int(i)
 
     return total_expense
+
+   
 
 class Total_monthly_expense(unittest.TestCase):
     def test_month_01(self):
